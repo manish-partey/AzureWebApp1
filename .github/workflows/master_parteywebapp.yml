@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - parteyWebApp
+name: Build and deploy ASP.Net Core app to Azure Web App - parteywebapp
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '3.1.301'
+          dotnet-version: '6.0.x'
           include-prerelease: true
 
       - name: Build with dotnet
@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'parteyWebApp'
+          app-name: 'parteywebapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C28240347E294B56B3066352AE367C6A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_78436640B598473093B0B3D9FF3FDDE4 }}
           package: .
